@@ -3,16 +3,16 @@ id: 3
 # Meters
 x: 1.395
 y: 1.395
-z: 2.5
+z: 2.8
 
 # Degrees
-roll:  !degrees 180.1
-pitch: !degrees -1
-yaw:   !degrees 1.3
+roll:  !degrees 184.1
+pitch: !degrees -1.
+yaw:   !degrees 2.3
 
 # Intrinsic parameters
 f_u:   1376.34
 f_v:   1376.34
-u0:    0.
-v0:    0.
+u0:    512.
+v0:    384.
 gamma: 0.
