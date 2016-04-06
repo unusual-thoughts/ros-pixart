@@ -1,0 +1,19 @@
+<launch>
+    <param name="robot_height" value="0.3" type="double"/>
+    <node name="pixart_can_reader" pkg="pixart" type="pixart_can_reader_node" output="screen">
+        <param name="ifname" value="vcan0" type="string"/>
+        <param name="debug" value="true" type="bool"/>
+    </node>
+    <node name="pixart_camera00" pkg="pixart" type="pixart_camera_node" output="screen">
+        <rosparam command="load" file="$(find pixart)/calib/00.yaml" />
+    </node>
+    <node name="pixart_camera01" pkg="pixart" type="pixart_camera_node" output="screen">
+        <rosparam command="load" file="$(find pixart)/calib/01.yaml" />
+    </node>
+    <node name="pixart_camera02" pkg="pixart" type="pixart_camera_node" output="screen">
+        <rosparam command="load" file="$(find pixart)/calib/02.yaml" />
+    </node>
+    <node name="pixart_camera03" pkg="pixart" type="pixart_camera_node" output="screen">
+        <rosparam command="load" file="$(find pixart)/calib/03.yaml" />
+    </node>
+</launch>

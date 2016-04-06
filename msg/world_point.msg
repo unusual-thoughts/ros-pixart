@@ -1,0 +1,3 @@
+geometry_msgs/PointStamped pt
+uint16 camera_id
+uint8 point_id

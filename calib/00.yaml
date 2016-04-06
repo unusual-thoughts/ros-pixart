@@ -1,0 +1,18 @@
+id: 0
+
+# Meters
+x: 0.
+y: 0.
+z: 2.5
+
+# Degrees
+roll:  !degrees 180.5
+pitch: !degrees 0.1
+yaw:   !degrees -0.2
+
+# Intrinsic parameters
+f_u:   1376.34
+f_v:   1376.34
+u0:    0.
+v0:    0.
+gamma: 0.
