@@ -125,8 +125,25 @@ class pixart_camera {
             rect.color.b = 0.0;
             origin.color = rect.color;
             origin.color.r = 1.0;
+            origin.color.g = 0.0;
 
             outline.markers.push_back(rect);
+            outline.markers.push_back(origin);
+
+            origin.id = 2;
+            origin.color.r = 0.0;
+            origin.color.g = 1.0;
+            origin.pose.position.x = rect.points[3].x;
+            origin.pose.position.y = rect.points[3].y;
+            origin.pose.position.z = rect.points[3].z;
+            outline.markers.push_back(origin);
+
+            origin.id = 3;
+            origin.color.g = 0.0;
+            origin.color.b = 1.0;
+            origin.pose.position.x = rect.points[11].x;
+            origin.pose.position.y = rect.points[11].y;
+            origin.pose.position.z = rect.points[11].z;
             outline.markers.push_back(origin);
             outline_pub = n.advertise<visualization_msgs::MarkerArray>(
                 "/camera_outline" + id_str, 1);
