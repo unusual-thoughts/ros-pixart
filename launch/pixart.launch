@@ -1,5 +1,7 @@
 <launch>
     <param name="robot_height" value="0.3" type="double"/>
+    <param name="visualize" value="true" type="boolean"/>
+    <node name="rviz_pixart" pkg="rviz" type="rviz" args="-d $(find pixart)/rviz/pixart_demo.rviz"/>
     <node name="pixart_can_reader" pkg="pixart" type="pixart_can_reader_node" output="screen">
         <param name="ifname" value="vcan0" type="string"/>
         <param name="debug" value="true" type="bool"/>

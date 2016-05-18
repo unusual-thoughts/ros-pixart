@@ -27,7 +27,7 @@ using namespace std;
 */
 
 /* Send test frame:
-	cansend vcan0 100#03ff02ff0000000
+	cansend vcan0 100#03ff02ff00000000
 	-> Decoded as: Camera 00 from box 00, Point0(1023, 767) and Point1(0, 0)
 */
 
@@ -113,7 +113,7 @@ int main (int argc, char** argv) {
 
     /* Initialize pixart_raw publisher */
     ros::Publisher pub = node.advertise<pixart::raw_point>(
-        "/pixart_raw", 1);
+        "/pixart_raw", 10);
 
 	ssize_t nbytes;
 	struct can_frame frame;
@@ -148,7 +148,7 @@ int main (int argc, char** argv) {
 						pt1.camera_id, pt1.camera_id >> 2,
 						pt1.point_id, pt1.x, pt1.y, pt2.point_id, pt2.x, pt2.y);
 
-				/* First point should nver be empty if it was sent by microcontroller */
+				/* First point should never be empty if it was sent by microcontroller */
 				pub.publish(pt1);
 				/* Second point could still be empty */
 				if (pt2.x != 1023 || pt2.y != 1023)

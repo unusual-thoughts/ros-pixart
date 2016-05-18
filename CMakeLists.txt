@@ -105,7 +105,7 @@ generate_messages(
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-#	INCLUDE_DIRS include
+	INCLUDE_DIRS include
 #  LIBRARIES pixart
 #  CATKIN_DEPENDS other_catkin_pkg
 #  DEPENDS system_lib
@@ -118,7 +118,7 @@ catkin_package(
 
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
-include_directories(${Eigen_INCLUDE_DIRS})
+include_directories(${Eigen_INCLUDE_DIRS} include/)
 
 ## Declare a C++ library
 # add_library(pixart
@@ -132,7 +132,7 @@ include_directories(${Eigen_INCLUDE_DIRS})
 
 ## Declare a C++ executable
 add_executable(pixart_can_reader_node src/pixart_can_reader_node.cpp)
-add_executable(pixart_camera_node src/pixart_camera_node.cpp)
+add_executable(pixart_camera_node src/pixart_camera_node.cpp src/pixart_camera.cpp)
 
 
 ## Add cmake target dependencies of the executable
