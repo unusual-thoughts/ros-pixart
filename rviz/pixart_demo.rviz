@@ -117,7 +117,7 @@ Visualization Manager:
       Class: rviz/PointStamped
       Color: 204; 41; 204
       Enabled: true
-      History Length: 1
+      History Length: 4
       Name: PointStamped
       Radius: 0.1
       Topic: /point_stream00
@@ -126,7 +126,7 @@ Visualization Manager:
       Class: rviz/PointStamped
       Color: 255; 255; 0
       Enabled: true
-      History Length: 1
+      History Length: 4
       Name: PointStamped
       Radius: 0.1
       Topic: /point_stream01
@@ -135,7 +135,7 @@ Visualization Manager:
       Class: rviz/PointStamped
       Color: 85; 255; 255
       Enabled: true
-      History Length: 1
+      History Length: 4
       Name: PointStamped
       Radius: 0.1
       Topic: /point_stream02
@@ -144,7 +144,7 @@ Visualization Manager:
       Class: rviz/PointStamped
       Color: 85; 0; 255
       Enabled: true
-      History Length: 1
+      History Length: 4
       Name: PointStamped
       Radius: 0.1
       Topic: /point_stream03
@@ -173,7 +173,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 6.64508
+      Distance: 5.68047
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
