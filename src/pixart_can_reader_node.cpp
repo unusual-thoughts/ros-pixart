@@ -148,10 +148,10 @@ int main (int argc, char** argv) {
 						pt1.camera_id, pt1.camera_id >> 2,
 						pt1.point_id, pt1.x, pt1.y, pt2.point_id, pt2.x, pt2.y);
 
-				/* First point should never be empty if it was sent by microcontroller */
-				pub.publish(pt1);
-				/* Second point could still be empty */
-				if (pt2.x != 1023 || pt2.y != 1023)
+				/* Don't publish empty points */
+				if (pt1.y != 1023)
+					pub.publish(pt1);
+				if (pt2.y != 1023)
 					pub.publish(pt2);
 			} else {
 				ROS_ERROR("Wrong frame size %d", frame.can_dlc);
