@@ -69,7 +69,7 @@ pixart_camera::pixart_camera(ros::NodeHandle &n) {
             "/camera_outline" + id_str, 1);
         /* Publisher for rviz point */
         pt_pub = n.advertise<geometry_msgs::PointStamped>(
-            "/point_stream" + id_str, 10);        
+            "/point_stream" + id_str, 10);
     }
 
     /* Initialize publisher */
@@ -84,15 +84,15 @@ pixart::world_point pixart_camera::unproject(const pixart::raw_point pt) {
     double z_c = (robot_height - z) / (R.row(2) * pp);
     sol.pt.point.x = x + z_c * R.row(0) * pp;
     sol.pt.point.y = y + z_c * R.row(1) * pp;
-    sol.pt.point.z = robot_height;   
+    sol.pt.point.z = robot_height;
     sol.pt.header.frame_id = "world";
     //sol.pt.point.header.seq =;
     sol.pt.header.stamp = pt.stamp;
     sol.camera_id = id;
     sol.point_id = pt.point_id;
-    
+
     return (sol);
-    
+
 }
 
 void pixart_camera::raw_callback(const pixart::raw_point pt) {
@@ -128,7 +128,7 @@ void pixart_camera::draw_outline(void) {
     camera_center.x = x;
     camera_center.y = y;
     camera_center.z = z;
-    
+
     pt.x = 0;
     pt.y = 0;
     world_point = unproject(pt).pt.point;
